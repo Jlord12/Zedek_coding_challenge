@@ -72,20 +72,25 @@ class HomeScreen extends StatelessWidget {
                 color: const Color.fromARGB(250, 9, 3, 27),
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: const Column(
+              child: Row(
+               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
- Row(
-  children: [
-    
-  ReusableText(text: '100kw', fontSize: 16, color: Colors.white,),
-  Spacer(),
-   ReusableText(text: '23:20:3s', fontSize: 16, color: Colors.white,),
-],),
-Row(children: [
-  ReusableText(text: 'Battery Capacity', fontSize: 12, color: Colors.white,),
-  Spacer(),
-   ReusableText(text: 'Quota Duration', fontSize: 12, color: Colors.white,),
-],)
+                IconButton(onPressed: (){}, icon: const Icon(Icons.battery_5_bar_rounded,color: Colors.green,size: 35,)),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Column(children: [
+                    ReusableText(text: '100kw', fontSize: 16, color: Colors.white),
+                    ReusableText(text: 'Battery Capacity', fontSize: 12, color: Colors.white),
+                  ],),
+                ),
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Column(children: [
+                    ReusableText(text: '23:20:3s', fontSize: 16, color: Colors.white),
+                    ReusableText(text: '  Quota Duration', fontSize: 12, color: Colors.white),
+                  ],),
+                ),
               ],),
             ),
              
