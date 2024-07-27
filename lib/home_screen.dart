@@ -1,5 +1,7 @@
 
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_app/reusable_text.dart';
 import 'package:my_app/widgets/bottom_flutter_navbar.dart';
 import 'package:my_app/widgets/car_widget.dart';
@@ -25,43 +27,57 @@ class HomeScreen extends StatelessWidget {
                  decoration: const BoxDecoration(
                  color: Color.fromARGB(250, 9, 3, 27),
                     ), 
-                    child:  Column(
-                      children: [
-                        SizedBox(height: size.height*0.05,),
-                      const ReusableText(
-                        text: 'Toyota Corolla Hybrid',
-                         fontSize: 20,
-                          color: Colors.orange,
-                          ),
-                           const ReusableText(
-                        text: 'Hybrid GLEX',
-                         fontSize: 16,
-                          color: Colors.white,
-                          ),
-                          const SizedBox(height: 8,),
-                           const ReusableText(
-                        text: 'Subscriber',
-                         fontSize: 12,
-                          color: Colors.orange,
-                          ),
-                    ],),
+                    child:  Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          SizedBox(height: size.height*0.08,),
+                        const ReusableText(
+                          text: 'Toyota Corolla Hybrid',
+                           fontSize: 20,
+                            color: Colors.orange,
+                            fontWeight: FontWeight.bold,
+                            ),
+                             const ReusableText(
+                          text: 'Hybrid GLEX',
+                           fontSize: 16,
+                            color: Colors.white,
+                            ),
+                            const SizedBox(height: 4,),
+                             const ReusableText(
+                          text: 'Subscriber',
+                           fontSize: 12,
+                            color: Colors.orange,
+                            ),
+                      ],),
+                    ),
                      
               ),
+             
               Positioned(
-                bottom: -20,
+                bottom: -50,
                 left: 0,
                 right: 0,
-                child: Container(
-                  height: 100,
+                child: SizedBox(
+                  height: 110,
                   width: 100,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(image: AssetImage('assets/images/1.jpg'))
-                  ),
+                  child: Swiper(
+                    
+                    itemCount: 1,
+                    itemBuilder: (context, index){
+                     return Image.asset('assets/images/1.png');
+                    },  
+                 control: const SwiperControl(size: 20,
+                  padding: EdgeInsets.only(right: 80,left: 80,bottom: 60),
+                  color: Colors.orange,
+                   
+                 ),
+                    ),
                 ),
               )
              ],
             ),
-            SizedBox(height: size.height*0.04,),
+            SizedBox(height: size.height*0.05,),
             const CarWidget(),
             SizedBox(height: size.height*0.04,),
             Container(
@@ -73,20 +89,23 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Row(
-               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                 IconButton(onPressed: (){}, icon: const Icon(Icons.battery_5_bar_rounded,color: Colors.green,size: 35,)),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Column(children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                     ReusableText(text: '100kw', fontSize: 16, color: Colors.white),
                     ReusableText(text: 'Battery Capacity', fontSize: 12, color: Colors.white),
                   ],),
                 ),
                 const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: const Column(children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                     ReusableText(text: '23:20:3s', fontSize: 16, color: Colors.white),
                     ReusableText(text: '  Quota Duration', fontSize: 12, color: Colors.white),
                   ],),
@@ -100,29 +119,50 @@ class HomeScreen extends StatelessWidget {
             children: [
             Container(
               height: 90,
-              width: 130,
+              width: 150,
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(width: 0.1,color: Colors.grey)
               ),
-              child: const Column(
+              child:  const Column(
+                
                 children: [
-                  Row(children: [
-                    Icon(Icons.battery_std_rounded),
-                    Column(children: [
-                      Text('Effiency'),
-                      Text('9.5 kwh/100km'),
-                    ],)
-                  ],),
+                  
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8,),
+                    child: Row(
+                      
+                      children: [
+                       
+                      Icon(Icons.battery_charging_full_outlined),
+                       SizedBox(width: 7,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                       ReusableText(text: 'Effiency', fontSize: 12, color: Colors.black),
+                        Row(
+                          children: [
+                            ReusableText(text: '9.5', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
+                            SizedBox(width: 5,),
+                            ReusableText(text: 'kwh/100km', fontSize: 13, color: Colors.black)],)
+                      ],)
+                    ],),
+                  ),
                   SizedBox(height: 6,),
-                   Row(children: [
-                    Icon(Icons.map_rounded),
-                    Column(children: [
-                      Text('Connector Type'),
-                      Text('CCS Combo 2'),
-                    ],)
-                  ],),
+                   Padding(
+                     padding: EdgeInsets.symmetric(horizontal: 8),
+                     child: Row(children: [
+                      Icon(Icons.watch_later_rounded),
+                       SizedBox(width: 7,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                         ReusableText(text: 'Connector Type', fontSize: 12, color: Colors.black,),
+                         ReusableText(text: 'CCS Combo 2', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
+                      ],)
+                                       ],),
+                   ),
                 ],
               ),
             ),
@@ -138,14 +178,16 @@ class HomeScreen extends StatelessWidget {
               child:  const Column(
                 children: [
                   Row(children: [
-                        Icon(Icons.car_crash),
-                        Column(children: [
-                          Text('Range'),
-                          Text('CLTC:--'),
-                          Text('WLTP'),
-                          Text('NEDC'),
-                        ],)
+                       FaIcon(FontAwesomeIcons.car,size: 20,),
+                       SizedBox(width: 12,),
+                        ReusableText(text: 'Range', fontSize: 12, color: Colors.black,),
+                        
+                       
                       ],),
+                      SizedBox(height: 5,),
+                       ReusableText(text: 'CLTC:--', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
+                           ReusableText(text: 'WLTP', fontSize: 12, color: Colors.black,fontWeight: FontWeight.bold,),
+                           ReusableText(text: 'NEDC', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
                 ],
               ),
             )
@@ -181,7 +223,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   //mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                  ReusableText(text: 'Godzilla Main Crib Station', fontSize: 16, color: Colors.grey),
+                  ReusableText(text: 'Godzilla Main Crib Station', fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold,),
                     SizedBox(height: 6,),
                   Row(
                     children: [

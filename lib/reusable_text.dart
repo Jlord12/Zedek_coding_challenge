@@ -5,10 +5,12 @@ class ReusableText extends StatelessWidget {
     super.key,
      required this.text,
       required this.fontSize,
-      required this.color});
+      required this.color,
+        this.fontWeight= FontWeight.normal});
   final String text;
   final double fontSize;
   final Color color;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,7 @@ class ReusableText extends StatelessWidget {
       text,
       style:  TextStyle(fontSize: fontSize,
       color: color,
+      fontWeight: fontWeight,
       ),
       );
   }
