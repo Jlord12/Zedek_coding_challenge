@@ -1,10 +1,10 @@
 
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_app/reusable_text.dart';
 import 'package:my_app/widgets/bottom_flutter_navbar.dart';
 import 'package:my_app/widgets/car_widget.dart';
+import 'package:my_app/widgets/two_row_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                         const ReusableText(
                           text: 'Toyota Corolla Hybrid',
                            fontSize: 20,
-                            color: Colors.orange,
+                            color: Colors.deepOrange,
                             fontWeight: FontWeight.bold,
                             ),
                              const ReusableText(
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                              const ReusableText(
                           text: 'Subscriber',
                            fontSize: 12,
-                            color: Colors.orange,
+                            color: Colors.deepOrange,
                             ),
                       ],),
                     ),
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     },  
                  control: const SwiperControl(size: 20,
                   padding: EdgeInsets.only(right: 80,left: 80,bottom: 60),
-                  color: Colors.orange,
+                  color:Colors.deepOrange,
                    
                  ),
                     ),
@@ -77,9 +77,9 @@ class HomeScreen extends StatelessWidget {
               )
              ],
             ),
-            SizedBox(height: size.height*0.05,),
+            SizedBox(height: size.height*0.06,),
             const CarWidget(),
-            SizedBox(height: size.height*0.04,),
+            SizedBox(height: size.height*0.02,),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
               height: 70,
@@ -96,8 +96,9 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    ReusableText(text: '100kw', fontSize: 16, color: Colors.white),
-                    ReusableText(text: 'Battery Capacity', fontSize: 12, color: Colors.white),
+                    ReusableText(text: '100kw', fontSize: 15, color: Colors.white),
+                    SizedBox(height: 8,),
+                    ReusableText(text: 'Battery Capacity', fontSize: 10, color: Colors.grey),
                   ],),
                 ),
                 const Spacer(),
@@ -106,93 +107,16 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    ReusableText(text: '23:20:3s', fontSize: 16, color: Colors.white),
-                    ReusableText(text: '  Quota Duration', fontSize: 12, color: Colors.white),
+                    ReusableText(text: '23:20:3s', fontSize: 15, color: Colors.white),
+                     SizedBox(height: 8,),
+                    ReusableText(text: '  Quota Duration', fontSize: 10, color: Colors.grey),
                   ],),
                 ),
               ],),
             ),
              
-           const  SizedBox(height: 15,),
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-            Container(
-              height: 90,
-              width: 150,
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(width: 0.1,color: Colors.grey)
-              ),
-              child:  const Column(
-                
-                children: [
-                  
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8,),
-                    child: Row(
-                      
-                      children: [
-                       
-                      Icon(Icons.battery_charging_full_outlined),
-                       SizedBox(width: 7,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                       ReusableText(text: 'Effiency', fontSize: 12, color: Colors.black),
-                        Row(
-                          children: [
-                            ReusableText(text: '9.5', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
-                            SizedBox(width: 5,),
-                            ReusableText(text: 'kwh/100km', fontSize: 13, color: Colors.black)],)
-                      ],)
-                    ],),
-                  ),
-                  SizedBox(height: 6,),
-                   Padding(
-                     padding: EdgeInsets.symmetric(horizontal: 8),
-                     child: Row(children: [
-                      Icon(Icons.watch_later_rounded),
-                       SizedBox(width: 7,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         ReusableText(text: 'Connector Type', fontSize: 12, color: Colors.black,),
-                         ReusableText(text: 'CCS Combo 2', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
-                      ],)
-                                       ],),
-                   ),
-                ],
-              ),
-            ),
-
-             Container(
-              height: 90,
-              width: 110,
-              decoration: BoxDecoration(
-                
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(width: 0.01)
-              ),
-              child:  const Column(
-                children: [
-                  Row(children: [
-                       FaIcon(FontAwesomeIcons.car,size: 20,),
-                       SizedBox(width: 12,),
-                        ReusableText(text: 'Range', fontSize: 12, color: Colors.black,),
-                        
-                       
-                      ],),
-                      SizedBox(height: 5,),
-                       ReusableText(text: 'CLTC:--', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
-                           ReusableText(text: 'WLTP', fontSize: 12, color: Colors.black,fontWeight: FontWeight.bold,),
-                           ReusableText(text: 'NEDC', fontSize: 16, color: Colors.black,fontWeight: FontWeight.bold,),
-                ],
-              ),
-            )
-           ],),
-           const SizedBox(height: 6,),
+           const  SizedBox(height: 8,),
+           const TwoRowWidget(),
            TextButton(
             onPressed: (){},
             
@@ -201,37 +125,36 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 
                 children: [
-               ReusableText(text: 'View all history', fontSize: 10, color: Colors.red),
-                Icon(Icons.arrow_right_alt_outlined, color: Colors.red)
+               ReusableText(text: 'View all history', fontSize: 10, color: Colors.deepOrange),
+                Icon(Icons.arrow_right_alt_outlined, color: Colors.deepOrange)
                ],),
              )
              ),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
               child: Container(
                 height: 70,
-                
-              
-               
-               
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.2),
                   border: Border.all(width: 0.01),
                 ),
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  //mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                  ReusableText(text: 'Godzilla Main Crib Station', fontSize: 14, color: Colors.black,fontWeight: FontWeight.bold,),
-                    SizedBox(height: 6,),
-                  Row(
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    //mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                    ReusableText(text: 'session ID:675648', fontSize: 11,color: Colors.grey),
-                      SizedBox(width: 6,),
-                    Icon(Icons.copy,size: 18,)
-                  ],)
-                ],),
+                    ReusableText(text: 'Godzilla Main Crib Station', fontSize: 12, color: Colors.black,fontWeight: FontWeight.bold,),
+                      SizedBox(height: 15,),
+                    Row(
+                      children: [
+                      ReusableText(text: 'session ID:675648', fontSize: 11,color: Colors.black),
+                        SizedBox(width: 6,),
+                      Icon(Icons.copy,size: 18,)
+                    ],)
+                  ],),
+                ),
               ),
             )
         ],

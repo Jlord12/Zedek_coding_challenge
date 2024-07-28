@@ -9,7 +9,7 @@ class BottomFlutterNavbar extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(30),
         boxShadow: const [
           BoxShadow(
       color: Color.fromARGB(250, 9, 3, 27),
@@ -17,33 +17,33 @@ class BottomFlutterNavbar extends StatelessWidget {
         )]
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(30),
         
        
         child: BottomNavigationBar(
-         // backgroundColor: Color.fromARGB(250, 9, 3, 27),
+
             showSelectedLabels: false,
-            selectedItemColor: Colors.orange,
+            selectedItemColor: Colors.deepOrange,
             unselectedItemColor: Colors.white,
             items: const [
                BottomNavigationBarItem(backgroundColor: Color.fromARGB(250, 9, 3, 27),
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home,size: 17,),
                 label: 'Home'
                 ),
                 BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.locationDot),
+                icon: FaIcon(FontAwesomeIcons.locationDot,size: 17,),
                 label: 'Home'
                 ),
                 BottomNavigationBarItem(
-                icon: Icon(Icons.qr_code_scanner),
+                icon: Icon(Icons.qr_code_scanner,size: 17,),
                 label: 'Home'
                 ),
                 BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.calendarMinus),
+                icon: FaIcon(FontAwesomeIcons.calendarMinus,size: 17,),
                 label: 'Home'
                 ),
                 BottomNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: Icon(Icons.person,size: 17,),
                 label: 'Person'
                 ),
             ]
