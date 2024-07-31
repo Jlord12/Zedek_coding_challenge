@@ -7,7 +7,7 @@ class TwoRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size =MediaQuery.of(context).size;
+    //Size size =MediaQuery.of(context).size;
     return Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -30,7 +30,9 @@ class TwoRowWidget extends StatelessWidget {
                         
                         children: [
                          
-                        Icon(Icons.battery_charging_full_outlined),
+                        ImageIcon(
+                          size:30,
+                          AssetImage('assets/images/2.png')),
                          SizedBox(width: 7,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,8 +70,8 @@ class TwoRowWidget extends StatelessWidget {
             ),
 
              Container(
-              height: 90,
-              width: 110,
+              height: 100,
+              width: 140,
               // padding: EdgeInsets.symmetric(horizontal: 10,vertical: 2),
               decoration: BoxDecoration(
                 

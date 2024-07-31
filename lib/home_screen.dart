@@ -20,12 +20,18 @@ class HomeScreen extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
              children: [
-              
+              SizedBox(
+                width: double.infinity,
+                height: size.height*0.3,
+                child: Image.asset(
+                  fit: BoxFit.fill,
+                  'assets/images/3.png'),
+              ),
               Container(
+                
                 width: double.infinity,
                 height: size.height*0.3,
                  decoration: const BoxDecoration(
-                 color: Color.fromARGB(250, 9, 3, 27),
                     ), 
                     child:  Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -53,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                      
               ),
-             
+              
               Positioned(
                 bottom: -50,
                 left: 0,
@@ -85,7 +91,7 @@ class HomeScreen extends StatelessWidget {
               height: 70,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(250, 9, 3, 27),
+                color:const Color(0xff161d30),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Row(

@@ -26,7 +26,8 @@ class BottomFlutterNavbar extends StatelessWidget {
             selectedItemColor: Colors.deepOrange,
             unselectedItemColor: Colors.white,
             items: const [
-               BottomNavigationBarItem(backgroundColor: Color.fromARGB(250, 9, 3, 27),
+               BottomNavigationBarItem(
+                backgroundColor: Color(0xff161d30),
                 icon: Icon(Icons.home,size: 17,),
                 label: 'Home'
                 ),
